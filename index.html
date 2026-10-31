@@ -190,6 +190,8 @@
 </div>
 
 <div class="thanh-duoi" id="thanhDuoi"><div><b data-ngay="thanh">Sáng thứ 3 hàng tuần</b>{{diaDiemNgan}}</div><a class="nut" href="#xac-nhan">Đăng ký dự</a></div>
+<audio id="nhac" src="nhac/{{nhacNen}}" preload="none" loop></audio>
+<button class="nut-nhac" id="nutNhac" type="button" aria-label="Bật hoặc tắt nhạc" aria-pressed="false"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18V5l11-2v13" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></button>
 <a class="nut-zalo" href="https://zalo.me/{{zaloNutNoi}}" target="_blank" rel="noopener" aria-label="Nhắn Zalo hỗ trợ khách mời">Zalo</a>
 <div class="thong-bao" id="thongBao" aria-live="polite"><b></b><span></span></div>
 <div class="xem" id="xem"><img alt=""><button class="x" type="button" aria-label="Đóng">×</button><button class="l" type="button" aria-label="Ảnh trước">‹</button><button class="p" type="button" aria-label="Ảnh sau">›</button></div>
@@ -249,7 +251,7 @@ window.CH={{CAU_HINH_JSON}};
   if("ResizeObserver" in window)new ResizeObserver(datDau).observe(bia.querySelector(".canh-cua.trai .the-bia"));
   function mo(){
     if(html.classList.contains("da-mo"))return;
-    html.classList.add("da-mo");setTimeout(phaoGiay,900);
+    html.classList.add("da-mo");setTimeout(phaoGiay,900);batNhac();
     setTimeout(function(){d.body.classList.remove("khoa");html.classList.add("da-vao");xemDau()},3500);
   }
   [].forEach.call(d.querySelectorAll("[data-mo]"),function(e){e.addEventListener("click",mo);e.addEventListener("keydown",function(k){if(k.key=="Enter"||k.key==" "){k.preventDefault();mo()}})});
@@ -344,6 +346,15 @@ window.CH={{CAU_HINH_JSON}};
 
   /* ---------- Chia sẻ ---------- */
   d.getElementById("chiaSe").onclick=function(){var u=location.href.split("#")[0],b=this;if(navigator.share)navigator.share({title:d.title,url:u}).catch(function(){});else if(navigator.clipboard)navigator.clipboard.writeText(u).then(function(){b.textContent="Đã chép đường dẫn"})};
+
+  /* ---------- Nhạc nền: bật ngay trong cú bấm "Mở thư mời" (trình duyệt chỉ cho phát khi người xem đã chạm) ---------- */
+  var nhac=d.getElementById("nhac"),nutNhac=d.getElementById("nutNhac"),khachTat=false;
+  function capNut(){var on=!nhac.paused;nutNhac.classList.toggle("dang-phat",on);nutNhac.setAttribute("aria-pressed",on)}
+  function batNhac(){nhac.volume=.6;var p=nhac.play();if(p&&p.catch)p.catch(function(){});}
+  nhac.addEventListener("play",capNut);nhac.addEventListener("pause",capNut);
+  nutNhac.onclick=function(){if(nhac.paused){khachTat=false;batNhac()}else{khachTat=true;nhac.pause()}};
+  /* tạm dừng khi khách chuyển sang ứng dụng khác, quay lại thì phát tiếp nếu khách chưa tự tắt */
+  d.addEventListener("visibilitychange",function(){if(d.hidden)nhac.pause();else if(!khachTat&&html.classList.contains("da-mo"))batNhac()});
 
   /* ---------- Pháo giấy nhiều màu, bắn khi mở thư ---------- */
   function phaoGiay(){if(giam)return;var c=d.getElementById("phao"),x=c.getContext("2d"),W=c.width=innerWidth,H=c.height=innerHeight,M=["#CF2030","#FFC93C","#FF8A00","#FF4F9A","#2EBD6B","#1E88E5","#8E5CF7","#ffffff"],p=[];

@@ -1,6 +1,6 @@
 // Dựng thư mời BNI HD vào thư mục public/ (Vercel chạy lệnh này khi deploy).
 // Đọc cau-hinh.json, điền vào index.html, nén ảnh, dựng logo, ảnh chia sẻ og.png, ảnh QR và lịch .ics.
-import { readFile, writeFile, mkdir, rm } from "node:fs/promises";
+import { readFile, writeFile, mkdir, rm, copyFile } from "node:fs/promises";
 import sharp from "sharp";
 import { Resvg } from "@resvg/resvg-js";
 import QRCode from "qrcode";
@@ -14,6 +14,12 @@ await mkdir(`${RA}/anh`, { recursive: true });
 const doiDuoi = (ten) => ten.replace(/\.\w+$/, ".jpg");
 for (const [ten, dich] of [...CH.album.map(([f]) => [f, doiDuoi(f)]), [CH.anhNen, "nen.jpg"]]) {
   await sharp(`anh-goc/${ten}`).resize({ width: 1280 }).jpeg({ quality: 78, mozjpeg: true }).toFile(`${RA}/anh/${dich}`);
+}
+
+// ---- Nhạc nền (thư mục nhac/), phát khi khách bấm "Mở thư mời" ----
+if (CH.nhacNen) {
+  await mkdir(`${RA}/nhac`, { recursive: true });
+  await copyFile(`nhac/${CH.nhacNen}`, `${RA}/nhac/${CH.nhacNen}`);
 }
 
 // ---- Logo BNI HD: dựng từ logo-bni-hd.svg (xuất từ file PDF gốc người vận hành gửi), thêm bản trắng cho nền đỏ ----

@@ -249,3 +249,11 @@ h3,.goi,.so-dong,.ket p,.trich,.gio-noi,.noi,.kinh-gui,.team-gt p[style]{text-wr
 .bdh small{font-weight:700;color:var(--do);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
 .bdh b{color:var(--chu);text-align:right}
 .lien-ket{display:grid;gap:10px;margin-top:18px}
+.nut-nhac{position:fixed;right:max(14px,calc(50% - 226px));bottom:150px;z-index:61;width:46px;height:46px;border-radius:50%;border:2px solid var(--do);background:#fff;color:var(--do);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.18);opacity:0;transform:scale(.6);transition:all .5s}
+.nut-nhac svg{width:22px;height:22px}
+.nut-nhac::after{content:"";position:absolute;width:30px;height:2px;background:var(--do);transform:rotate(-45deg);border-radius:2px}
+.nut-nhac.dang-phat::after{display:none}
+.nut-nhac.dang-phat svg{animation:nhip 1.2s ease-in-out infinite}
+@keyframes nhip{50%{transform:scale(1.15)}}
+.da-vao .nut-nhac{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.nut-nhac.dang-phat svg{animation:none}}
