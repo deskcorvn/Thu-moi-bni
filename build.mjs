@@ -104,7 +104,8 @@ const chuongTrinh = CH.chuongTrinh.length
     CH.chuongTrinh.map(([tu, den, ds]) => `<div class="muc r"><div class="gio">${tu}<small>đến ${den}</small></div><ul>${ds.map((x) => `<li>${thoat(x)}</li>`).join("")}</ul></div>`).join("") +
     `</div>\n  </section>\n`
   : "";
-const album = CH.album.map(([f, alt]) => `<figure><img src="anh/${f}" alt="${thoat(alt)}" loading="lazy"></figure>`).join("\n      ");
+// Mục thứ ba "tron-anh": hiện trọn ảnh (sơ đồ, poster) thay vì cắt cho đầy khung.
+const album = CH.album.map(([f, alt, kieu]) => `<figure${kieu ? ` class="${kieu}"` : ""}><img src="anh/${f}" alt="${thoat(alt)}" loading="lazy"></figure>`).join("\n      ");
 const dauTick = `<i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg></i>`;
 const luuY = CH.luuY.length
   ? `      <div class="luu-y r"><p style="font-weight:700;color:var(--chu)">Lưu ý tham dự:</p><ul class="loi-ich">${CH.luuY.map((x) => `<li>${dauTick}${thoat(x)}</li>`).join("")}</ul></div>\n`
