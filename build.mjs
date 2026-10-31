@@ -1,5 +1,5 @@
 // Dựng thư mời BNI HD vào thư mục public/ (Vercel chạy lệnh này khi deploy).
-// Đọc cau-hinh.json, điền vào index.html, tải ảnh tạm, cắt chữ BNI gốc, dựng ảnh chia sẻ og.png và lịch .ics.
+// Đọc cau-hinh.json, điền vào index.html, nén ảnh, dựng logo, ảnh chia sẻ og.png, ảnh QR và lịch .ics.
 import { readFile, writeFile, mkdir, rm } from "node:fs/promises";
 import sharp from "sharp";
 import { Resvg } from "@resvg/resvg-js";
@@ -10,23 +10,10 @@ const RA = "public";
 await rm(RA, { recursive: true, force: true });
 await mkdir(`${RA}/anh`, { recursive: true });
 
-async function tai(url) {
-  const r = await fetch(url);
-  if (!r.ok) throw new Error(`Không tải được ${url}: ${r.status}`);
-  return Buffer.from(await r.arrayBuffer());
-}
-
-// ---- Ảnh tạm (của trang mẫu), chờ BNI HD gửi ảnh thật ----
-// Mỗi ảnh có dải chữ "Team xây dựng Vùng Cors Miền Bắc" in ở 12% dưới cùng: cắt bỏ dải đó.
-// k2 có phông "Lễ chuyển giao ... CORs Miền Bắc" nên không dùng.
-for (const ten of ["k1", "k3", "k4", "k5", "k6", "k7", "k8"]) {
-  const goc = sharp(await tai(`${CH.nguonAnhTam}${ten}.jpg`));
-  const { width, height } = await goc.metadata();
-  await goc
-    .extract({ left: 0, top: 0, width, height: Math.round(height * 0.88) })
-    .resize({ width: 1280 })
-    .jpeg({ quality: 78, mozjpeg: true })
-    .toFile(`${RA}/anh/${ten}.jpg`);
+// ---- Ảnh thật của BNI HD (thư mục anh-goc/): nén lại cho nhẹ, ảnh nền đầu trang lưu thành nen.jpg ----
+const doiDuoi = (ten) => ten.replace(/\.\w+$/, ".jpg");
+for (const [ten, dich] of [...CH.album.map(([f]) => [f, doiDuoi(f)]), [CH.anhNen, "nen.jpg"]]) {
+  await sharp(`anh-goc/${ten}`).resize({ width: 1280 }).jpeg({ quality: 78, mozjpeg: true }).toFile(`${RA}/anh/${dich}`);
 }
 
 // ---- Logo BNI HD: dựng từ logo-bni-hd.svg (xuất từ file PDF gốc người vận hành gửi), thêm bản trắng cho nền đỏ ----
@@ -41,7 +28,7 @@ for (const [svg, ten] of [[logoSvg, "bni-hd.png"], [logoSvg.replace(/fill="#[0-9
 const THU_MUC_FONT = "node_modules/@expo-google-fonts/be-vietnam-pro/";
 const fontFiles = ["700Bold/BeVietnamPro_700Bold.ttf", "500Medium/BeVietnamPro_500Medium.ttf"].map((f) => THU_MUC_FONT + f);
 const chuTrang = (await readFile(`${RA}/anh/bni-hd-trang.png`)).toString("base64");
-const nenOg = (await sharp(`${RA}/anh/k8.jpg`).resize(1200, 630, { fit: "cover" }).jpeg({ quality: 70 }).toBuffer()).toString("base64");
+const nenOg = (await sharp(`${RA}/anh/nen.jpg`).resize(1200, 630, { fit: "cover" }).jpeg({ quality: 70 }).toBuffer()).toString("base64");
 const svgOg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CF2030" stop-opacity=".94"/><stop offset="1" stop-color="#9c1722" stop-opacity=".97"/></linearGradient></defs>
   <image href="data:image/jpeg;base64,${nenOg}" width="1200" height="630" preserveAspectRatio="xMidYMid slice"/>
@@ -111,6 +98,7 @@ const chuongTrinh = CH.chuongTrinh.length
     CH.chuongTrinh.map(([tu, den, ds]) => `<div class="muc r"><div class="gio">${tu}<small>đến ${den}</small></div><ul>${ds.map((x) => `<li>${thoat(x)}</li>`).join("")}</ul></div>`).join("") +
     `</div>\n  </section>\n`
   : "";
+const album = CH.album.map(([f, alt]) => `<figure><img src="anh/${doiDuoi(f)}" alt="${thoat(alt)}" loading="lazy"></figure>`).join("\n      ");
 const dauTick = `<i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg></i>`;
 const luuY = CH.luuY.length
   ? `      <div class="luu-y r"><p style="font-weight:700;color:var(--chu)">Lưu ý tham dự:</p><ul class="loi-ich">${CH.luuY.map((x) => `<li>${dauTick}${thoat(x)}</li>`).join("")}</ul></div>\n`
@@ -122,6 +110,7 @@ trang = trang
   .replace("{{BAN_DIEU_HANH}}", banDieuHanh)
   .replace("{{CHUONG_TRINH}}", chuongTrinh)
   .replace("{{LUU_Y}}", luuY)
+  .replace("{{ALBUM}}", album)
   .replace("{{CAU_HINH_JSON}}", JSON.stringify(choBrowser).replace(/</g, "\\u003c"))
   .replace(/\{\{timBanDoUrl\}\}/g, encodeURIComponent(CH.timBanDo))
   .replace(/\{\{(\w+)\}\}/g, (_, k) => {

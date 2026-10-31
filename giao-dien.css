@@ -78,7 +78,7 @@ h3,.goi,.so-dong,.ket p,.trich,.gio-noi,.noi,.kinh-gui,.team-gt p[style]{text-wr
 
 /* ===== Đầu trang ===== */
 .dau{padding:0;color:#fff;text-align:center;position:relative;background:var(--do)}
-.dau .nen{position:absolute;inset:0;background:url(anh/k8.jpg) center/cover}
+.dau .nen{position:absolute;inset:0;background:url(anh/nen.jpg) center/cover}
 .dau .phu{position:absolute;inset:0;background:linear-gradient(180deg,rgba(207,32,48,.93) 0%,rgba(207,32,48,.86) 55%,rgba(156,23,34,.96) 100%)}
 .dau .noi-dung{position:relative;padding:34px 22px 38px}
 .dau .logo{width:140px;margin:0 auto 18px}

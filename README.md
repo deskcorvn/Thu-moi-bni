@@ -21,6 +21,7 @@ người gửi lời mời, số Zalo) nằm trong `cau-hinh.json`. Sửa file �
 | `index.html` | Khung trang, có chỗ `{{khoa}}` để điền từ `cau-hinh.json` |
 | `giao-dien.css` | Giao diện, được chèn thẳng vào trang khi build |
 | `build.mjs` | Chạy khi deploy: điền cấu hình, dựng logo, ảnh chia sẻ `og.png`, ảnh QR, file lịch `.ics`, ra thư mục `public/` |
+| `anh-goc/` | Ảnh thật của BNI HD; `album` và `anhNen` trong `cau-hinh.json` chọn ảnh nào hiện ở đâu |
 | `logo-bni-hd.svg` | Logo BNI HD xuất từ file PDF gốc; build dựng bản màu và bản trắng |
 | `api/dang-ky.js`, `api/loi-chuc.js` | Nhận đăng ký khách mời và lời nhắn, chuyển sang Google Sheet |
 | `apps-script/Code.gs` | Mã dán vào Apps Script của Google Sheet (hướng dẫn ở đầu file) |
@@ -36,8 +37,3 @@ node build.mjs
 ```
 
 Mở `public/index.html` qua một máy chủ tĩnh bất kỳ. Phần đăng ký và lời nhắn chỉ chạy trên Vercel.
-
-## Còn tạm
-
-Ảnh album và ảnh nền đầu trang đang tải từ trang mẫu (`nguonAnhTam` trong `cau-hinh.json`) và đã cắt
-dòng chữ của đơn vị khác. Có ảnh BNI HD thì thay bằng ảnh thật.
