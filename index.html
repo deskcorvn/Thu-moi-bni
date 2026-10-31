@@ -347,10 +347,10 @@ window.CH={{CAU_HINH_JSON}};
   /* ---------- Chia sẻ ---------- */
   d.getElementById("chiaSe").onclick=function(){var u=location.href.split("#")[0],b=this;if(navigator.share)navigator.share({title:d.title,url:u}).catch(function(){});else if(navigator.clipboard)navigator.clipboard.writeText(u).then(function(){b.textContent="Đã chép đường dẫn"})};
 
-  /* ---------- Pháo giấy đỏ, ghi khi mở thư ---------- */
-  function phaoGiay(){if(giam)return;var c=d.getElementById("phao"),x=c.getContext("2d"),W=c.width=innerWidth,H=c.height=innerHeight,M=["#CF2030","#CF2030","#64666A","#C8C8C8","#ffffff"],p=[];
-    for(var i=0;i<110;i++)p.push({x:W/2+(Math.random()-.5)*80,y:H*.45,vx:(Math.random()-.5)*9,vy:-Math.random()*11-3,r:4+Math.random()*5,g:Math.random()*6,vg:(Math.random()-.5)*.3,m:M[i%M.length]});
-    var t0=performance.now();(function buoc(t){x.clearRect(0,0,W,H);var con=false;p.forEach(function(q){q.vy+=.28;q.vx*=.99;q.x+=q.vx;q.y+=q.vy;q.g+=q.vg;if(q.y<H+20)con=true;x.save();x.translate(q.x,q.y);x.rotate(q.g);x.fillStyle=q.m;x.fillRect(-q.r,-q.r*.4,q.r*2,q.r*.8);x.restore()});
+  /* ---------- Pháo giấy nhiều màu, bắn khi mở thư ---------- */
+  function phaoGiay(){if(giam)return;var c=d.getElementById("phao"),x=c.getContext("2d"),W=c.width=innerWidth,H=c.height=innerHeight,M=["#CF2030","#FFC93C","#FF8A00","#FF4F9A","#2EBD6B","#1E88E5","#8E5CF7","#ffffff"],p=[];
+    for(var i=0;i<160;i++)p.push({x:W/2+(Math.random()-.5)*80,y:H*.45,vx:(Math.random()-.5)*10,vy:-Math.random()*12-3,r:4+Math.random()*5,g:Math.random()*6,vg:(Math.random()-.5)*.3,m:M[i%M.length],tron:i%3==0});
+    var t0=performance.now();(function buoc(t){x.clearRect(0,0,W,H);var con=false;p.forEach(function(q){q.vy+=.28;q.vx*=.99;q.x+=q.vx;q.y+=q.vy;q.g+=q.vg;if(q.y<H+20)con=true;x.save();x.translate(q.x,q.y);x.rotate(q.g);x.fillStyle=q.m;if(q.tron){x.beginPath();x.arc(0,0,q.r*.6,0,7);x.fill()}else x.fillRect(-q.r,-q.r*.4,q.r*2,q.r*.8);x.restore()});
       if(con&&t-t0<5000)requestAnimationFrame(buoc);else x.clearRect(0,0,W,H)})(t0)}
 })();
 </script>
