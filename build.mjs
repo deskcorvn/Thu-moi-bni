@@ -44,7 +44,7 @@ const svgOg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"
   <text x="80" y="302" font-family="Be Vietnam Pro" font-weight="700" font-size="76" fill="#fff">BUỔI HỌP KẾT NỐI</text>
   <text x="80" y="404" font-family="Be Vietnam Pro" font-weight="700" font-size="76" fill="#fff">KINH DOANH</text>
   <rect x="80" y="456" width="476" height="64" rx="12" fill="#fff"/>
-  <text x="318" y="499" text-anchor="middle" font-family="Be Vietnam Pro" font-weight="700" font-size="29" letter-spacing="2" fill="#CF2030">SÁNG THỨ 3 HÀNG TUẦN</text>
+  <text x="318" y="499" text-anchor="middle" font-family="Be Vietnam Pro" font-weight="700" font-size="29" letter-spacing="2" fill="#CF2030">SÁNG THỨ BA HÀNG TUẦN</text>
   <text x="80" y="572" font-family="Be Vietnam Pro" font-weight="500" font-size="30" fill="#fff">${CH.gioBatDau ? `${CH.gioBatDau} – ${CH.gioKetThuc} · ` : ""}${CH.tenDiaDiem}</text>
 </svg>`;
 const og = new Resvg(svgOg, { font: { fontFiles, loadSystemFonts: false, defaultFontFamily: "Be Vietnam Pro" } }).render().asPng();

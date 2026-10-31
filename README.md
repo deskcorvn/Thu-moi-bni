@@ -1,6 +1,6 @@
 # Thư mời BNI HD
 
-Trang thư mời dự buổi họp kết nối kinh doanh sáng thứ 3 của BNI HD Chapter:
+Trang thư mời dự buổi họp kết nối kinh doanh sáng thứ Ba của BNI HD Chapter:
 https://thumoi-bnihd.giftytech.com (dự án Vercel `thu-moi-bni-hd`).
 
 ## Sửa nội dung
