@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
+  "headers": [
+    { "source": "/anh/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }] },
+    { "source": "/lich-hop.ics", "headers": [{ "key": "Content-Type", "value": "text/calendar; charset=utf-8" }] }
+  ]
+}

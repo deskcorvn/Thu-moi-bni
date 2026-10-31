@@ -1,0 +1,17 @@
+{
+  "name": "thu-moi-bni-hd",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "@expo-google-fonts/be-vietnam-pro": "0.4.1",
+    "@resvg/resvg-js": "2.6.2",
+    "qrcode": "1.5.4",
+    "sharp": "0.33.5"
+  }
+}

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Thư mời · Buổi họp kết nối kinh doanh sáng thứ 3 · BNI HD Chapter</title>
+<meta name="description" content="Mời Anh/Chị dự buổi họp kết nối kinh doanh của BNI HD Chapter, sáng thứ 3 hàng tuần, 07:00 đến 09:00 tại {{tenDiaDiem}}, {{diaChi}}. Đăng ký làm khách mời chỉ mất 1 phút.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{tenMien}}">
+<link rel="canonical" href="{{tenMien}}">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Thư mời · Buổi họp kết nối kinh doanh · BNI HD Chapter">
+<meta property="og:description" content="Sáng thứ 3 hàng tuần · {{tenDiaDiem}}. Kết nối cùng {{soDoanhNhan}} chủ doanh nghiệp, mỗi ngành nghề một ghế. Đăng ký làm khách mời chỉ mất 1 phút.">
+<meta property="og:image" content="{{tenMien}}anh/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="theme-color" content="#CF2030">
+<link rel="icon" href="anh/bni-hd.png">
+<style>
+/*GIAO_DIEN*/
+.gio-noi i{font-style:normal}
+.phi .luu-y{text-align:left;margin-top:6px}
+.bdh b span{display:block;font-weight:400;font-size:13px;color:var(--ghi);margin-top:2px}
+.bdh-nhom{margin-top:14px;font-weight:700;color:var(--chu)}
+.bdh div:not(:has(small)) b{text-align:left}
+.chan .gifty{display:block;margin-top:14px;font-size:12px;letter-spacing:.06em;color:#9a9b9e;text-decoration:none}
+.chan .gifty b{color:#c8c8c8}
+</style>
+</head>
+<body class="khoa">
+
+<!-- ===== Bìa: hai cánh cửa ===== -->
+<div class="bia" id="bia"></div>
+<canvas id="phao" aria-hidden="true"></canvas>
+
+<div class="trang">
+  <header class="dau" id="dau">
+    <div class="nen"></div><div class="phu"></div>
+    <div class="noi-dung">
+      <img class="logo r" src="anh/bni-hd-trang.png" alt="BNI HD">
+      <div class="thu-moi r"><i></i>THƯ MỜI<i></i></div>
+      <p class="team r" data-vua><span class="d">BNI HD CHAPTER</span></p>
+      <h1 class="r" data-vua><span class="d">Buổi họp kết nối</span><span class="d">kinh doanh</span></h1>
+      <p class="phu-de r" data-vua><span class="d">Mời Anh/Chị dự với tư cách khách mời</span></p>
+      <span class="nk r">SÁNG THỨ 3 HÀNG TUẦN</span>
+      <div class="chu-de r"><small>Triết lý BNI</small><b data-vua><span class="d">GIVERS GAIN® · CHO LÀ NHẬN</span></b></div>
+      <p class="so-lon r"><b data-vua><span class="d">{{soDoanhNhan}} CHỦ DOANH NGHIỆP</span></b>MỖI NGÀNH NGHỀ MỘT NGƯỜI</p>
+      <div class="o-ngay r"><span>Thứ 3</span><b data-ngay="ngay">--</b><span data-ngay="thangNam">Tháng --<br>----</span></div>
+      <p class="gio-noi r"><i data-ngay="gioDong">Sáng thứ 3 hàng tuần</i><span>{{tenDiaDiem}} · {{diaChi}}</span></p>
+      <div id="demNguoc">
+        <div class="dem"><div><b data-d="ngay">0</b><small>Ngày</small></div><div><b data-d="gio">0</b><small>Giờ</small></div><div><b data-d="phut">0</b><small>Phút</small></div><div><b data-d="giay">0</b><small>Giây</small></div></div>
+        <p class="con-ngay" id="conNgay"></p>
+      </div>
+      <div class="hang">
+        <a class="nut trang-n" href="#xac-nhan">Tôi sẽ tới dự</a>
+        <a class="nut vien-trang" href="#chuong-trinh">Xem chương trình</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="loi-moi">
+    <p class="nhan r">Lời mời</p>
+    <div class="vach r"></div>
+    <p class="r">Trân trọng kính mời Anh/Chị tới dự buổi họp kết nối kinh doanh của BNI HD Chapter, diễn ra vào sáng thứ 3 hàng tuần, từ 07:00 đến 09:00, tại {{tenDiaDiem}}.</p>
+    <p class="r">BNI HD là nhóm chủ doanh nghiệp gặp nhau mỗi tuần để giới thiệu khách hàng cho nhau. Anh/Chị tới với tư cách khách mời, gặp gỡ các thành viên và tận mắt xem một buổi họp BNI diễn ra thế nào.</p>
+  </section>
+
+  <section class="xam">
+    <p class="nhan r">Vì sao</p>
+    <h2 class="r" data-vua><span class="d">Vì sao Anh/Chị</span><span class="d"><b>nên ghé một buổi?</b></span></h2>
+    <div class="vach r"></div>
+    <div class="ly-do">
+      <div class="the r"><div class="so">01</div><h3>Kết nối cùng {{soDoanhNhan}} chủ doanh nghiệp</h3><p>Anh/Chị gặp các chủ doanh nghiệp của Chapter, những người đã quen giới thiệu khách hàng cho nhau. Một buổi sáng là đủ để Anh/Chị thấy họ làm việc đó ra sao.</p></div>
+      <div class="the r"><div class="so">02</div><h3>Mỗi ngành nghề chỉ một người</h3><p>Mỗi Chapter chỉ nhận một thành viên cho một chuyên ngành. Anh/Chị xem <a href="{{danhSachThanhVien}}" target="_blank" rel="noopener">danh sách thành viên</a> để biết ngành của mình còn trống hay không.</p></div>
+      <div class="the r"><div class="so">03</div><h3>Giữ chỗ cho ngành của mình</h3><p>Ngành nào còn trống thì người tới trước có cơ hội giữ chỗ. Ghé một buổi họp là cách nhanh nhất để biết BNI có hợp với doanh nghiệp của Anh/Chị hay không.</p></div>
+    </div>
+  </section>
+
+  <section id="dia-diem">
+    <p class="nhan r">Thời gian &amp; địa điểm</p>
+    <h2 class="r" data-vua><span class="d">Hẹn gặp Anh/Chị</span><span class="d"><b>sáng thứ 3</b></span></h2>
+    <div class="vach r"></div>
+    <div class="tt">
+      <div class="dong r"><div class="bt"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><div><small>Thời gian</small><b data-ngay="gioTT">Sáng thứ 3 hàng tuần</b><span data-ngay="ganNhat"></span></div></div>
+      <div class="dong r"><div class="bt"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div><div><small>Địa điểm</small><b>{{tenDiaDiem}}</b>{{diaChi}}</div></div>
+    </div>
+    <div class="ban-do r"><iframe title="Bản đồ nơi họp BNI HD" loading="lazy" data-src="https://maps.google.com/maps?q={{timBanDoUrl}}&z=15&output=embed"></iframe></div>
+    <div class="hang-nut r">
+      <a class="nut" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query={{timBanDoUrl}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-8-8 18-2-8z"/></svg>Chỉ đường</a>
+      <a class="nut vien" id="lichGoogle" target="_blank" rel="noopener">Thêm vào lịch Google</a>
+      <a class="nut vien" href="lich-hop.ics" download>Lưu lịch iPhone, Outlook</a>
+    </div>
+  </section>
+
+{{CHUONG_TRINH}}
+  <section class="album">
+    <div class="dau-muc"><p class="nhan r">Khoảnh khắc</p><h2 class="r" data-vua><span class="d">Những buổi <b>kết nối</b></span></h2><div class="vach r"></div></div>
+    <div class="truot" id="truot">
+      <figure><img src="anh/k1.jpg" alt="Ảnh minh họa buổi kết nối BNI" loading="lazy"></figure>
+      <figure><img src="anh/k3.jpg" alt="Ảnh minh họa buổi kết nối BNI" loading="lazy"></figure>
+      <figure><img src="anh/k4.jpg" alt="Ảnh minh họa buổi kết nối BNI" loading="lazy"></figure>
+      <figure><img src="anh/k6.jpg" alt="Ảnh minh họa buổi kết nối BNI" loading="lazy"></figure>
+      <figure><img src="anh/k7.jpg" alt="Ảnh minh họa buổi kết nối BNI" loading="lazy"></figure>
+      <figure><img src="anh/k5.jpg" alt="Ảnh minh họa buổi kết nối BNI" loading="lazy"></figure>
+    </div>
+    <div class="dk"><button type="button" id="truoc" aria-label="Ảnh trước">‹</button><div class="cham" id="cham"></div><button type="button" id="sau" aria-label="Ảnh sau">›</button></div>
+  </section>
+
+  <section class="xn" id="xac-nhan">
+    <p class="nhan r">Đăng ký</p>
+    <h2 class="r" data-vua><span class="d">Đăng ký làm khách mời!</span></h2>
+    <div class="vach r"></div>
+    <p class="goi r">Chỉ mất 1 phút để đăng ký!</p>
+    <p class="y r">Để BNI HD chuẩn bị thẻ tên và chỗ ngồi đón Anh/Chị.</p>
+    <p class="so-dong r">Mỗi ngành nghề chỉ một ghế. Ngành của Anh/Chị còn trống không?</p>
+    <div class="phieu r">
+      <form id="pf" novalidate>
+        <label for="ho_ten">Họ và tên</label><input type="text" id="ho_ten" name="ho_ten" maxlength="80" autocomplete="name" placeholder="Để in thẻ tên cho Anh/Chị">
+        <label for="sdt">Số điện thoại</label><input type="tel" id="sdt" name="sdt" maxlength="20" autocomplete="tel" placeholder="09xx xxx xxx">
+        <label for="email">Email</label><input type="email" id="email" name="email" maxlength="120" autocomplete="email" placeholder="ten@congty.vn">
+        <label for="doanh_nghiep">Tên doanh nghiệp</label><input type="text" id="doanh_nghiep" name="doanh_nghiep" maxlength="120" autocomplete="organization">
+        <label for="linh_vuc">Lĩnh vực hoạt động</label><input type="text" id="linh_vuc" name="linh_vuc" maxlength="120" placeholder="Ví dụ: in ấn, bảo hiểm, nội thất">
+        <label for="buoi_hop">Buổi họp Anh/Chị muốn tới</label><select id="buoi_hop" name="buoi_hop"></select>
+        <label>Anh/Chị đã là thành viên BNI?</label>
+        <div class="chon2"><label><input type="radio" name="thanh_vien" value="co">Có</label><label><input type="radio" name="thanh_vien" value="chua">Chưa</label></div>
+        <div class="an" id="oChapter"><label for="chapter">Chapter đang sinh hoạt</label><input type="text" id="chapter" name="chapter" maxlength="80" placeholder="Tên Chapter của Anh/Chị"></div>
+        <div class="an" id="oNguoiMoi"><label for="nguoi_moi">Anh/Chị nhận được lời mời từ ai?</label><input type="text" id="nguoi_moi" name="nguoi_moi" maxlength="80" placeholder="Họ tên người mời"></div>
+        <input class="bay" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="nut" type="submit" id="gui">Tôi sẽ tới dự</button>
+        <p class="tb" id="tbXn" role="status"></p>
+      </form>
+      <div class="xong" id="xong"><div class="tick"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#fff" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg></div><h3 id="xongH"></h3><p id="xongP"></p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="nhan r">Phí tham dự</p>
+    <h2 class="r" data-vua><span class="d">Phí tham dự <b>&amp; chuyển khoản</b></span></h2>
+    <div class="vach r"></div>
+    <div class="phi">
+      <p class="gia r">{{phi}}<small>{{phiGhiChu}}</small></p>
+      <img class="r" src="anh/qr.png" alt="Mã QR chuyển khoản phí tham dự" loading="lazy">
+      <p class="r">Quét mã để chuyển phí tham dự. Cần hỗ trợ, Anh/Chị nhắn Zalo {{zaloHienThi}}.</p>
+      <a class="nut vien r" href="anh/qr.png" download="ma-qr-phi-tham-du-bni-hd.png">Lưu ảnh mã QR</a>
+{{LUU_Y}}    </div>
+  </section>
+
+  <section class="xam so-but">
+    <p class="nhan r">Sổ lưu bút</p>
+    <h2 class="r" data-vua><span class="d">Gửi lời nhắn</span><span class="d"><b>tới BNI HD</b></span></h2>
+    <div class="vach r"></div>
+    <p class="r">Anh/Chị để lại tên và đôi lời gửi các thành viên BNI HD.</p>
+    <form id="lb" class="r" novalidate style="margin-top:14px">
+      <input type="text" name="ten" maxlength="60" placeholder="Họ và tên">
+      <textarea name="loi" rows="3" maxlength="300" placeholder="Lời nhắn gửi BNI HD"></textarea>
+      <input class="bay" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="nut" type="submit">Gửi lời nhắn</button><p class="tb" id="tbLb" role="status"></p>
+    </form>
+    <div class="ds" id="ds"><p class="rong">Đang tải lời nhắn…</p></div>
+  </section>
+
+  <section class="team-gt">
+    <p class="nhan r">Về chúng tôi</p>
+    <h2 class="r" data-vua><span class="d">BNI HD</span><span class="d"><b>Chapter</b></span></h2>
+    <div class="vach r"></div>
+    <p class="r" style="font-weight:700;color:var(--chu)">Đến vì buổi họp, ở lại vì những lời giới thiệu khách hàng.</p>
+    <p class="loi r" style="margin-top:8px">BNI HD Chapter thuộc BNI vùng Hải Phòng, Quảng Ninh, Hải Dương. Chapter họp vào sáng thứ 3 hàng tuần. Mỗi buổi họp, Anh/Chị được kết nối kinh doanh cùng {{soDoanhNhan}} chủ doanh nghiệp của Chapter.</p>
+{{BAN_DIEU_HANH}}    <p class="r" style="margin-top:14px;font-weight:700;color:var(--chu)">Tham gia Chapter, thành viên có cơ hội:</p>
+    <ul class="loi-ich">
+      <li class="r"><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg></i>Nhận lời giới thiệu khách hàng từ các thành viên khác trong Chapter.</li>
+      <li class="r"><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg></i>Giữ vị trí duy nhất cho ngành nghề của mình trong Chapter.</li>
+      <li class="r"><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg></i>Gặp các chủ doanh nghiệp đều đặn mỗi tuần, quen nhau đủ lâu để tin mà giới thiệu.</li>
+    </ul>
+    <p class="trich r">Cho là nhận: giúp người khác có thêm khách, mình cũng có thêm khách.</p>
+    <div class="lien-ket r">
+      <a class="nut vien" href="{{danhSachThanhVien}}" target="_blank" rel="noopener">Xem danh sách thành viên</a>
+      <a class="nut vien" href="{{trangChinhThuc}}" target="_blank" rel="noopener">Trang chính thức BNI HD</a>
+    </div>
+  </section>
+
+  <section class="nguoi-moi">
+    <div class="the r">
+      <p class="nhan">Người gửi lời mời</p>
+      <p class="ten">{{nguoiMoi}}</p>
+      <p class="cv">{{chucDanhNguoiMoi}}</p>
+      <div class="hang-nut">
+        <a class="nut" href="https://zalo.me/{{zalo}}" target="_blank" rel="noopener" style="flex-direction:column;gap:2px;padding:10px 20px">Zalo hỗ trợ khách mời<small style="font-weight:400;letter-spacing:.04em;text-transform:none;font-size:14px">{{zaloHienThi}}</small></a>
+        <a class="nut vien" href="tel:{{dienThoaiChapter}}" style="flex-direction:column;gap:2px;padding:10px 20px">Gọi BNI HD<small style="font-weight:400;letter-spacing:.04em;text-transform:none;font-size:14px">{{dienThoaiChapterHienThi}}</small></a>
+        <button class="nut vien" type="button" id="chiaSe">Chia sẻ thư mời này</button>
+      </div>
+    </div>
+    <div class="ket r" style="margin-top:26px">
+      <p>Hẹn gặp Anh/Chị sáng thứ 3 tại buổi họp kết nối kinh doanh của BNI HD Chapter, {{tenDiaDiem}}!</p>
+      <p class="moi">Trân trọng kính mời!</p>
+    </div>
+  </section>
+
+  <footer class="chan"><img src="anh/bni-hd-trang.png" alt="BNI HD">BNI HD Chapter<br>Sáng thứ 3 hàng tuần · {{tenDiaDiem}}<a class="gifty" href="https://www.giftytech.com/" target="_blank" rel="noopener">Powered by <b>Gifty Tech</b></a></footer>
+</div>
+
+<div class="thanh-duoi" id="thanhDuoi"><div><b data-ngay="thanh">Sáng thứ 3 hàng tuần</b>{{diaDiemNgan}}</div><a class="nut" href="#xac-nhan">Đăng ký dự</a></div>
+<a class="nut-zalo" href="https://zalo.me/{{zaloNutNoi}}" target="_blank" rel="noopener" aria-label="Nhắn Zalo hỗ trợ khách mời">Zalo</a>
+<div class="thong-bao" id="thongBao" aria-live="polite"><b></b><span></span></div>
+<div class="xem" id="xem"><img alt=""><button class="x" type="button" aria-label="Đóng">×</button><button class="l" type="button" aria-label="Ảnh trước">‹</button><button class="p" type="button" aria-label="Ảnh sau">›</button></div>
+
+<script>
+window.CH={{CAU_HINH_JSON}};
+(function(){
+  var d=document,html=d.documentElement,CH=window.CH;
+  var giam=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var THU=["Chủ nhật","Thứ 2","Thứ 3","Thứ 4","Thứ 5","Thứ 6","Thứ 7"];
+  function hai(n){return(n<10?"0":"")+n}
+
+  /* ---------- Buổi họp gần nhất, tính theo giờ Việt Nam ---------- */
+  /* vn(): một Date mà các hàm getUTC* trả đúng giờ Việt Nam */
+  function vn(t){return new Date((t||Date.now())+7*3600e3)}
+  function phut(s){var p=String(s||"").split(":");return p.length==2?(+p[0])*60+(+p[1]):-1}
+  var BD=phut(CH.gioBatDau),KT=phut(CH.gioKetThuc),coGio=BD>=0;
+  /* buổi thứ k (0 = gần nhất). Hôm nay là ngày họp thì còn tính tới khi tan họp (không có giờ thì tới 12:00) */
+  function buoi(k){var n=vn(),cach=(CH.thuHop-n.getUTCDay()+7)%7,hienPhut=n.getUTCHours()*60+n.getUTCMinutes();
+    if(cach==0&&hienPhut>=(coGio?(KT>=0?KT:BD+120):720))cach=7;
+    var x=new Date(Date.UTC(n.getUTCFullYear(),n.getUTCMonth(),n.getUTCDate()+cach+7*k));
+    return{y:x.getUTCFullYear(),m:x.getUTCMonth()+1,d:x.getUTCDate(),thu:THU[x.getUTCDay()],
+      moc:Date.UTC(x.getUTCFullYear(),x.getUTCMonth(),x.getUTCDate())-7*3600e3+(coGio?BD:0)*60e3}}
+  function ngayVi(b){return b.thu+", "+hai(b.d)+"/"+hai(b.m)+"/"+b.y}
+  var B=buoi(0),GIO=coGio?CH.gioBatDau+(KT>=0?" đến "+CH.gioKetThuc:""):"";
+  function dat(k,v,h){[].forEach.call(d.querySelectorAll('[data-ngay="'+k+'"]'),function(e){if(h)e.innerHTML=v;else e.textContent=v})}
+  dat("ngay",hai(B.d));dat("thangNam","Tháng "+B.m+"<br>"+B.y,true);
+  if(coGio)dat("gioDong",GIO);
+  if(coGio)dat("gioTT",GIO);dat("ganNhat","Buổi gần nhất: "+ngayVi(B));
+  dat("thanh",B.thu+" · "+hai(B.d)+"/"+hai(B.m)+(coGio?" · "+CH.gioBatDau:""));
+  var chon=d.getElementById("buoi_hop");
+  for(var i=0;i<4;i++){var b=buoi(i),o=d.createElement("option");o.value=o.textContent=ngayVi(b);chon.appendChild(o)}
+  var o2=d.createElement("option");o2.value=o2.textContent="Chưa chắc, nhờ BNI HD gọi lại";chon.appendChild(o2);
+
+  /* ---------- Bìa: một nội dung, chia hai cánh ---------- */
+  var pho='<svg viewBox="0 0 400 140" preserveAspectRatio="xMidYMax slice"><g fill="#fff"><rect x="10" y="70" width="26" height="70"/><rect x="40" y="40" width="22" height="100"/><rect x="66" y="88" width="30" height="52"/><rect x="100" y="20" width="24" height="120"/><rect x="128" y="60" width="28" height="80"/><rect x="160" y="34" width="20" height="106"/><rect x="184" y="76" width="34" height="64"/><rect x="222" y="10" width="26" height="130"/><rect x="252" y="54" width="22" height="86"/><rect x="278" y="30" width="30" height="110"/><rect x="312" y="80" width="24" height="60"/><rect x="340" y="46" width="22" height="94"/><rect x="366" y="70" width="30" height="70"/></g></svg>';
+  var noi='<div class="soc"></div><div class="dai"></div><div class="pho">'+pho+'</div>'+
+    '<div class="the-bia"><div class="ruot"><div class="nap"><svg viewBox="0 0 300 104" preserveAspectRatio="none"><path d="M0 0 H300 L150 104 Z" fill="#C8C8C8" opacity=".55" transform="translate(0 3)"/><path d="M0 0 H300 L150 100 Z" fill="#f3f3f4"/><path d="M0 0 L150 100 L300 0" fill="none" stroke="#C8C8C8" stroke-width="1.2"/></svg></div><div class="tem"><img src="anh/bni-hd.png" alt=""></div><p class="kinh-gui">Kính gửi <b>Quý Anh/Chị</b></p>'+
+    '<div class="thu-moi"><i></i>THƯ MỜI<i></i></div><h1 data-vua><span class="d">Buổi họp kết nối</span><span class="d">kinh doanh</span></h1><p class="phu-bia" data-vua><span class="d">BNI HD Chapter</span></p><span class="nk">SÁNG THỨ 3 HÀNG TUẦN</span>'+
+    '<p class="ngay"><b>'+B.thu.toUpperCase()+'</b> · '+hai(B.d)+'.'+hai(B.m)+'.'+B.y+(coGio?' · <b>'+CH.gioBatDau+'</b>':'')+'</p><p class="noi"></p>'+
+    '<button class="nut" type="button" data-mo>Mở thư mời</button></div></div>';
+  var bia=d.getElementById("bia");
+  bia.innerHTML='<div class="canh-cua trai"><div class="trong">'+noi+'</div></div><div class="canh-cua phai"><div class="trong">'+noi+'</div></div>'+
+    '<div class="dau-sap" data-mo role="button" tabindex="0" aria-label="Mở thư mời"><img src="anh/bni-hd-trang.png" alt=""></div>';
+  [].forEach.call(bia.querySelectorAll(".the-bia .noi"),function(e){e.textContent=CH.diaDiemNgan});
+  /* đặt con dấu đúng mũi nắp thư */
+  function datDau(){var t=bia.querySelector(".canh-cua.trai .the-bia .nap");if(!t)return;var r=t.getBoundingClientRect();bia.querySelector(".dau-sap").style.setProperty("--top",(r.bottom-44)+"px")}
+  /* co chữ tiêu đề: giảm dần cỡ chữ tới khi dòng dài nhất vừa khung (không phóng to quá cỡ gốc) */
+  function vua(){[].forEach.call(d.querySelectorAll("[data-vua]"),function(h){h.style.fontSize="";var w=h.clientWidth;if(!w)return;var f=parseFloat(getComputedStyle(h).fontSize),ds=h.querySelectorAll(".d"),n=0;
+    function tran(){for(var i=0;i<ds.length;i++)if(ds[i].scrollWidth>w+1)return true;return false}
+    while(tran()&&f>11&&n<80){f-=.5;n++;h.style.fontSize=f+"px"}});
+    /* mọi tiêu đề phần cùng một cỡ: lấy cỡ nhỏ nhất vừa khung của cả nhóm */
+    var h2=[].slice.call(d.querySelectorAll(".trang h2[data-vua]")).filter(function(h){return h.clientWidth});if(h2.length){var m=Math.min.apply(null,h2.map(function(h){return parseFloat(getComputedStyle(h).fontSize)}));h2.forEach(function(h){h.style.fontSize=m+"px"})}}
+  vua();addEventListener("resize",vua);addEventListener("load",vua);if(d.fonts&&d.fonts.ready)d.fonts.ready.then(vua);
+  datDau();addEventListener("resize",datDau);addEventListener("load",datDau);
+  [].forEach.call(bia.querySelectorAll(".the-bia img"),function(i){i.addEventListener("load",datDau)});
+  if("ResizeObserver" in window)new ResizeObserver(datDau).observe(bia.querySelector(".canh-cua.trai .the-bia"));
+  function mo(){
+    if(html.classList.contains("da-mo"))return;
+    html.classList.add("da-mo");setTimeout(phaoGiay,900);
+    setTimeout(function(){d.body.classList.remove("khoa");html.classList.add("da-vao");xemDau()},3500);
+  }
+  [].forEach.call(d.querySelectorAll("[data-mo]"),function(e){e.addEventListener("click",mo);e.addEventListener("keydown",function(k){if(k.key=="Enter"||k.key==" "){k.preventDefault();mo()}})});
+
+  /* ---------- Hiện dần ---------- */
+  var ds=d.querySelectorAll(".r");
+  function xemDau(){[].forEach.call(d.querySelectorAll("#dau .r"),function(e,i){e.style.setProperty("--i",i);e.classList.add("vao")})}
+  if(!("IntersectionObserver" in window)||giam)[].forEach.call(ds,function(e){e.classList.add("vao")});
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting&&html.classList.contains("da-vao")){x.target.classList.add("vao");io.unobserve(x.target)}})},{rootMargin:"0px 0px -8% 0px"});
+    [].forEach.call(ds,function(e){if(!e.closest("#dau"))io.observe(e)});}
+
+  /* ---------- Đếm ngược: có giờ họp thì đếm tới giờ, chưa có giờ thì chỉ báo còn mấy ngày ---------- */
+  var dn=d.getElementById("demNguoc"),cn=d.getElementById("conNgay");
+  if(coGio){cn.style.display="none";(function chay(){var c=B.moc-Date.now();if(c<=0){B=buoi(0);c=B.moc-Date.now()}if(c<=0)c=0;
+    var s=Math.floor(c/1000),v={ngay:Math.floor(s/86400),gio:Math.floor(s%86400/3600),phut:Math.floor(s%3600/60),giay:s%60};
+    [].forEach.call(d.querySelectorAll("[data-d]"),function(e){e.textContent=v[e.dataset.d]});setTimeout(chay,1000)})();}
+  else{dn.querySelector(".dem").style.display="none";var con=Math.round((B.moc-Date.UTC(vn().getUTCFullYear(),vn().getUTCMonth(),vn().getUTCDate())+7*3600e3)/864e5);
+    cn.textContent=con<=0?"Buổi họp diễn ra sáng nay":con==1?"Buổi họp diễn ra sáng mai":"Còn "+con+" ngày nữa tới buổi họp"}
+
+  /* ---------- Lịch: lặp lại mỗi thứ 3 ---------- */
+  function ngayLich(b,p){var t=new Date(Date.UTC(b.y,b.m-1,b.d)-7*3600e3+p*60e3);return t.toISOString().replace(/[-:]/g,"").slice(0,15)+"Z"}
+  var b0=buoi(0),ymd=""+b0.y+hai(b0.m)+hai(b0.d),sau=new Date(Date.UTC(b0.y,b0.m-1,b0.d+1)),ymd2=""+sau.getUTCFullYear()+hai(sau.getUTCMonth()+1)+hai(sau.getUTCDate());
+  d.getElementById("lichGoogle").href="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent("Buổi họp kết nối kinh doanh · BNI HD Chapter")+
+    "&dates="+(coGio?ngayLich(b0,BD)+"/"+ngayLich(b0,KT>=0?KT:BD+120):ymd+"/"+ymd2)+"&recur="+encodeURIComponent("RRULE:FREQ=WEEKLY;BYDAY="+["SU","MO","TU","WE","TH","FR","SA"][CH.thuHop])+
+    "&location="+encodeURIComponent(CH.tenDiaDiem+", "+CH.diaChi)+"&details="+encodeURIComponent("Thư mời: "+location.href.split("#")[0]);
+
+  /* ---------- Bản đồ tải khi gần tới ---------- */
+  var ifr=d.querySelector(".ban-do iframe");
+  if("IntersectionObserver" in window)new IntersectionObserver(function(es,o){if(es[0].isIntersecting){ifr.src=ifr.dataset.src;o.disconnect()}},{rootMargin:"500px"}).observe(ifr);else ifr.src=ifr.dataset.src;
+
+  /* ---------- Album trượt + xem lớn ---------- */
+  var tr=d.getElementById("truot"),fg=[].slice.call(tr.children),cham=d.getElementById("cham");
+  fg.forEach(function(){cham.appendChild(d.createElement("i"))});
+  function giua(){var c=tr.scrollLeft+tr.clientWidth/2,k=0,m=1e9;fg.forEach(function(f,i){var x=Math.abs(f.offsetLeft+f.offsetWidth/2-c);if(x<m){m=x;k=i}});fg.forEach(function(f,i){f.classList.toggle("giua",i==k)});[].forEach.call(cham.children,function(e,i){e.classList.toggle("on",i==k)});return k}
+  tr.addEventListener("scroll",function(){requestAnimationFrame(giua)},{passive:true});
+  function den(k){k=(k+fg.length)%fg.length;tr.scrollTo({left:fg[k].offsetLeft+fg[k].offsetWidth/2-tr.clientWidth/2,behavior:"smooth"})}
+  d.getElementById("truoc").onclick=function(){den(giua()-1)};d.getElementById("sau").onclick=function(){den(giua()+1)};giua();
+  /* tự lướt 1,5 giây một ảnh khi album đang hiện; khách chạm, vuốt hay bấm nút thì nghỉ 6 giây rồi chạy tiếp */
+  var thay=false,nghiDen=0;
+  function nghi(){nghiDen=Date.now()+6000}
+  ["pointerdown","touchstart","wheel"].forEach(function(ev){tr.addEventListener(ev,nghi,{passive:true})});
+  d.getElementById("truoc").addEventListener("click",nghi);d.getElementById("sau").addEventListener("click",nghi);
+  if("IntersectionObserver" in window)new IntersectionObserver(function(es){thay=es[0].isIntersecting},{threshold:.4}).observe(tr);else thay=true;
+  setInterval(function(){if(thay&&!d.hidden&&html.classList.contains("da-vao")&&Date.now()>nghiDen&&!d.getElementById("xem").classList.contains("mo"))den(giua()+1)},1500);
+  var xem=d.getElementById("xem"),xi=xem.querySelector("img"),vt=0;
+  function hien(n){vt=(n+fg.length)%fg.length;xi.src=fg[vt].querySelector("img").src;xem.classList.add("mo")}
+  fg.forEach(function(f,i){f.onclick=function(){hien(i)}});
+  xem.querySelector(".x").onclick=function(){xem.classList.remove("mo")};xem.querySelector(".l").onclick=function(e){e.stopPropagation();hien(vt-1)};xem.querySelector(".p").onclick=function(e){e.stopPropagation();hien(vt+1)};
+  xem.onclick=function(e){if(e.target===xem)xem.classList.remove("mo")};
+
+  /* ---------- Đăng ký khách mời ---------- */
+  var pf=d.getElementById("pf"),tb=d.getElementById("tbXn"),gui=d.getElementById("gui");
+  [].forEach.call(pf.thanh_vien,function(r){r.onchange=function(){d.getElementById("oChapter").classList.toggle("an",pf.thanh_vien.value!="co");d.getElementById("oNguoiMoi").classList.toggle("an",pf.thanh_vien.value!="chua")}});
+  pf.addEventListener("submit",function(e){
+    e.preventDefault();var o={};new FormData(pf).forEach(function(v,k){o[k]=String(v).trim()});
+    if(!o.ho_ten){tb.textContent="Anh/Chị cho biết họ tên giúp BNI HD nhé.";pf.ho_ten.focus();return}
+    if(o.sdt.replace(/\D/g,"").length<9){tb.textContent="Số điện thoại chưa đúng, cần 9 đến 11 số.";pf.sdt.focus();return}
+    if(o.email&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(o.email)){tb.textContent="Email chưa đúng.";pf.email.focus();return}
+    if(!o.thanh_vien){tb.textContent="Anh/Chị chọn đã là thành viên BNI hay chưa giúp nhé.";return}
+    gui.disabled=true;gui.textContent="Đang gửi…";tb.textContent="";
+    fetch("api/dang-ky",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(o)}).then(function(r){return r.json()}).then(function(r){
+      if(!r.ok)throw new Error(r.loi||"loi");
+      var ten=o.ho_ten.split(/\s+/).pop(),chua=o.buoi_hop.indexOf("Chưa chắc")==0;
+      d.getElementById("xongH").textContent="Cảm ơn Anh/Chị "+ten+"!";
+      d.getElementById("xongP").textContent=(chua?"BNI HD đã ghi nhận đăng ký của Anh/Chị.":"BNI HD đã ghi nhận. Hẹn gặp Anh/Chị sáng "+o.buoi_hop+(coGio?", lúc "+CH.gioBatDau:"")+" tại "+CH.tenDiaDiem+", "+CH.diaChi+".")+" Cần hỏi thêm, Anh/Chị nhắn Zalo "+CH.zaloHienThi+".";
+      pf.style.display="none";d.getElementById("xong").classList.add("hien");daXn=true;capThanh();
+      try{localStorage.setItem("bni-hd-xn","1")}catch(x){}
+    }).catch(function(){gui.disabled=false;gui.textContent="Tôi sẽ tới dự";tb.textContent="Chưa gửi được. Anh/Chị thử lại, hoặc nhắn Zalo "+CH.zaloHienThi+"."});
+  });
+
+  /* ---------- Sổ lưu bút ---------- */
+  var dsEl=d.getElementById("ds"),CHUC=[];
+  function the(c){var e=d.createElement("div");e.className="lc";e.innerHTML="<b></b><time></time><p></p>";e.querySelector("b").textContent=c.ten;e.querySelector("time").textContent=c.gio||"";e.querySelector("p").textContent=c.loi;return e}
+  function veDs(){dsEl.innerHTML="";if(!CHUC.length){dsEl.innerHTML='<p class="rong">Hãy là người đầu tiên để lại lời nhắn!</p>';return}CHUC.forEach(function(c){dsEl.appendChild(the(c))})}
+  fetch("api/loi-chuc").then(function(r){return r.json()}).then(function(r){CHUC=r.ds||[];veDs()}).catch(function(){CHUC=[];veDs()});
+  var lb=d.getElementById("lb"),tbl=d.getElementById("tbLb");
+  lb.addEventListener("submit",function(e){e.preventDefault();var t=lb.ten.value.trim(),l=lb.loi.value.trim();if(!t||!l){tbl.textContent="Anh/Chị viết tên và lời nhắn giúp nhé.";return}
+    var b=lb.querySelector("button");b.disabled=true;
+    fetch("api/loi-chuc",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({ten:t,loi:l,website:lb.website.value})}).then(function(r){return r.json()}).then(function(r){
+      b.disabled=false;if(!r.ok)throw new Error();CHUC.unshift(r.muc);veDs();lb.reset();tbl.textContent="Cảm ơn Anh/Chị đã để lại lời nhắn!"}).catch(function(){b.disabled=false;tbl.textContent="Chưa gửi được, Anh/Chị thử lại giúp nhé."})});
+
+  /* ---------- Lời nhắn bật lên ---------- */
+  var tbx=d.getElementById("thongBao"),k=0;
+  (function chuc(){if(!html.classList.contains("da-vao")||!CHUC.length||d.hidden){setTimeout(chuc,2500);return}
+    var c=CHUC[k++%CHUC.length];tbx.querySelector("b").textContent=c.ten;tbx.querySelector("span").textContent=c.loi;tbx.classList.add("hien");setTimeout(function(){tbx.classList.remove("hien")},4300);setTimeout(chuc,10000)})();
+
+  /* ---------- Thanh dưới: hiện khi đã qua đầu trang, ẩn khi tới phần đăng ký ---------- */
+  var td=d.getElementById("thanhDuoi"),xn=d.getElementById("xac-nhan"),daXn=false;
+  try{daXn=localStorage.getItem("bni-hd-xn")=="1"}catch(x){}
+  function capThanh(){var r=xn.getBoundingClientRect();td.classList.toggle("hien",html.classList.contains("da-vao")&&!daXn&&scrollY>500&&(r.top>innerHeight||r.bottom<0))}
+  addEventListener("scroll",capThanh,{passive:true});
+
+  /* ---------- Chia sẻ ---------- */
+  d.getElementById("chiaSe").onclick=function(){var u=location.href.split("#")[0],b=this;if(navigator.share)navigator.share({title:d.title,url:u}).catch(function(){});else if(navigator.clipboard)navigator.clipboard.writeText(u).then(function(){b.textContent="Đã chép đường dẫn"})};
+
+  /* ---------- Pháo giấy đỏ, ghi khi mở thư ---------- */
+  function phaoGiay(){if(giam)return;var c=d.getElementById("phao"),x=c.getContext("2d"),W=c.width=innerWidth,H=c.height=innerHeight,M=["#CF2030","#CF2030","#64666A","#C8C8C8","#ffffff"],p=[];
+    for(var i=0;i<110;i++)p.push({x:W/2+(Math.random()-.5)*80,y:H*.45,vx:(Math.random()-.5)*9,vy:-Math.random()*11-3,r:4+Math.random()*5,g:Math.random()*6,vg:(Math.random()-.5)*.3,m:M[i%M.length]});
+    var t0=performance.now();(function buoc(t){x.clearRect(0,0,W,H);var con=false;p.forEach(function(q){q.vy+=.28;q.vx*=.99;q.x+=q.vx;q.y+=q.vy;q.g+=q.vg;if(q.y<H+20)con=true;x.save();x.translate(q.x,q.y);x.rotate(q.g);x.fillStyle=q.m;x.fillRect(-q.r,-q.r*.4,q.r*2,q.r*.8);x.restore()});
+      if(con&&t-t0<5000)requestAnimationFrame(buoc);else x.clearRect(0,0,W,H)})(t0)}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{
+  "_ghiChu": "Mọi thông tin hiển thị trên thư mời nằm ở file này. Nguồn: poster buổi kết nối số 441 (03/11/2026) và ảnh QR người vận hành gửi 31/10/2026; Ban điều hành, Ban Khách mời do người vận hành gửi 31/10/2026; liên kết Chapter: https://hqh.bni.vn/haiphong-quangninh-haiduong-bni-hd/vi-VN/index. Để trống gioBatDau thì trang không hiện giờ và không đếm ngược.",
+  "tenMien": "https://thumoi-bnihd.giftytech.com/",
+  "thuHop": 2,
+  "gioBatDau": "07:00",
+  "gioKetThuc": "09:00",
+  "tenDiaDiem": "Nhà hàng Scorpion (Thế Giới Xanh)",
+  "diaChi": "Khu 3, Phố Mai Ngô, Phường Hải Dương, Thành phố Hải Phòng",
+  "diaDiemNgan": "Nhà hàng Scorpion, Phố Mai Ngô",
+  "timBanDo": "Nhà hàng Scorpion Thế Giới Xanh, Phố Mai Ngô, Hải Dương",
+  "soDoanhNhan": "40+",
+  "chuongTrinh": [
+    ["07:00", "07:30", ["Giao lưu cà phê - Kết nối doanh nhân"]],
+    ["07:30", "08:30", ["Đào tạo Networking (Education Moment): chia sẻ kỹ năng xây dựng mối quan hệ trong kinh doanh", "Giới thiệu doanh nghiệp (Weekly Presentation): thành viên và khách mời lần lượt giới thiệu ngắn về doanh nghiệp và cơ hội kinh doanh mình đang tìm", "Bài thuyết trình chính (Feature Presentation): một thành viên trình bày sâu về doanh nghiệp và chuyên môn của mình"]],
+    ["08:30", "09:00", ["Kết thúc và dùng bữa sáng cùng doanh nhân"]]
+  ],
+  "phi": "100.000 VNĐ",
+  "phiGhiChu": "PHÍ CHIA SẺ PHÒNG HỌP VÀ ĂN SÁNG",
+  "chuyenKhoan": {
+    "ten": "NGUYEN THI BINH",
+    "soTaiKhoan": "120262",
+    "nganHang": "MB Bank",
+    "maQR": "00020101021138500010A0000007270120000697042201061202620208QRIBFTTA53037045802VN80300012com.vng.zalo0110ZABANKCARD63041872"
+  },
+  "luuY": [
+    "Khách mời mặc trang phục doanh nhân trang trọng, dresscode: trắng, đen.",
+    "Có mặt trước 06:30 để tham gia cà phê kết nối doanh nhân.",
+    "Mang theo 40+ danh thiếp."
+  ],
+  "banDieuHanh": [
+    ["Chủ tịch", "Lê Hồng Dương", "CÔNG TY TNHH IN 360"],
+    ["Phó Chủ tịch", "Phạm Minh Tuấn", "Công ty CP Auto Hải Dương"],
+    ["Tổng thư ký", "Nguyễn Thị Măng", "Công ty cổ phần tmsx DV thái Sơn adv"]
+  ],
+  "banKhachMoi": [
+    ["Nguyễn Thị Thanh Thúy", "Bách Thảo Ngự Y 2"],
+    ["Trần Văn Trường", "Công Ty TNHH MTV Thương Mại Sản Xuất TVT"],
+    ["Đồng Thị Loan", "Công ty cổ phần thương mại dịch vụ và sản xuất sơn quốc tế five nano"]
+  ],
+  "nguoiMoi": "Nguyễn Thị Thanh Thúy",
+  "chucDanhNguoiMoi": "Ban Khách mời BNI HD",
+  "zalo": "0904168487",
+  "zaloHienThi": "0904.168.487",
+  "zaloNutNoi": "0913332282",
+  "dienThoaiChapter": "0984632623",
+  "dienThoaiChapterHienThi": "0984 632 623",
+  "trangChinhThuc": "https://hqh.bni.vn/haiphong-quangninh-haiduong-bni-hd/vi-VN/index",
+  "danhSachThanhVien": "https://hqh.bni.vn/haiphong-quangninh-haiduong-bni-hd/vi-VN/memberlist",
+  "nguonAnhTam": "https://vkwedding.vn/bni-cors-mien-bac/anh/"
+}
