@@ -30,14 +30,14 @@
   "banDieuHanh": [
     ["Chủ tịch", "Lê Hồng Dương", "CÔNG TY TNHH IN 360"],
     ["Phó Chủ tịch", "Phạm Minh Tuấn", "Công ty CP Auto Hải Dương"],
-    ["Tổng thư ký", "Nguyễn Thị Măng", "Công ty cổ phần tmsx DV thái Sơn adv"]
+    ["Tổng thư ký", "Nguyễn Thị Măng", "Công ty Cổ phần TMSX DV Thái Sơn ADV"]
   ],
   "banKhachMoi": [
     ["Nguyễn Thị Thanh Thúy", "Bách Thảo Ngự Y 2"],
     ["Trần Văn Trường", "Công Ty TNHH MTV Thương Mại Sản Xuất TVT"]
   ],
   "nguoiMoi": "Nguyễn Thị Thanh Thúy",
-  "chucDanhNguoiMoi": "Ban Khách mời BNI HD",
+  "chucDanhNguoiMoi": "Ban hỗ trợ khách mời BNI HD",
   "zalo": "0904168487",
   "zaloHienThi": "0904.168.487",
   "zaloNutNoi": "0913332282",
@@ -51,6 +51,11 @@
     ["trao-co-chuyen-giao.jpg", "Nghi thức trao cờ tại Lễ chuyển giao Ban điều hành liên Chapter BNI HD - BNI Horizon"],
     ["chuyen-giao-chao-tay.jpg", "Thành viên tại Lễ chuyển giao Ban điều hành liên Chapter BNI HD - BNI Horizon"],
     ["don-khach-buoi-ket-noi.jpg", "Thành viên và khách mời tại buổi kết nối BNI HD"],
-    ["giao-luu-san-vuon.jpg", "Thành viên BNI HD giao lưu ngoài sân vườn"]
+    ["giao-luu-san-vuon.jpg", "Thành viên BNI HD giao lưu ngoài sân vườn"],
+    ["keo-co-bai-bien.jpg", "Thành viên BNI HD chơi kéo co trên bãi biển"],
+    ["tro-choi-vong-tron.jpg", "Trò chơi tập thể của BNI HD trên bãi biển"],
+    ["tro-choi-dan-gian.jpg", "Thành viên và các bé chơi trò chơi dân gian trên bãi biển"],
+    ["doi-ve-dich.jpg", "Một đội chơi tại ngày hội gia đình BNI HD"],
+    ["family-day.jpg", "Thành viên và gia đình tại ngày hội BNI HD Family Day"]
   ]
 }

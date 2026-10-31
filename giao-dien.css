@@ -246,7 +246,7 @@ h3,.goi,.so-dong,.ket p,.trich,.gio-noi,.noi,.kinh-gui,.team-gt p[style]{text-wr
 .ly-do a{color:var(--do);font-weight:700}
 .bdh{display:grid;gap:8px;margin:12px 0 4px}
 .bdh div{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff;border-radius:12px;padding:11px 14px;border-left:4px solid var(--do);box-shadow:0 3px 10px rgba(0,0,0,.05)}
-.bdh small{font-weight:700;color:var(--do);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.bdh small{font-weight:700;color:var(--do);font-size:12px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;flex:none}
 .bdh b{color:var(--chu);text-align:right}
 .lien-ket{display:grid;gap:10px;margin-top:18px}
 .nut-nhac{position:fixed;right:max(14px,calc(50% - 226px));bottom:150px;z-index:61;width:46px;height:46px;border-radius:50%;border:2px solid var(--do);background:#fff;color:var(--do);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.18);opacity:0;transform:scale(.6);transition:all .5s}

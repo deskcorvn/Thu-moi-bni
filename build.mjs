@@ -94,7 +94,7 @@ const the = (cv, ten, cty) => `<div class="r">${cv ? `<small>${thoat(cv)}</small
 const nhom = (tieuDe, ds) => ds.length ? `    <p class="r bdh-nhom">${tieuDe}</p>\n    <div class="bdh">${ds.join("")}</div>\n` : "";
 const banDieuHanh =
   nhom("Ban điều hành Chapter:", CH.banDieuHanh.map(([cv, ten, cty]) => the(cv, ten, cty))) +
-  nhom("Ban Khách mời:", (CH.banKhachMoi || []).map(([ten, cty]) => the("", ten, cty)));
+  nhom("Ban hỗ trợ khách mời:", (CH.banKhachMoi || []).map(([ten, cty]) => the("", ten, cty)));
 const chuongTrinh = CH.chuongTrinh.length
   ? `  <section class="xam" id="chuong-trinh">
     <p class="nhan r">Chương trình</p>
