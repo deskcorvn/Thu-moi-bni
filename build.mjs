@@ -10,11 +10,11 @@ const RA = "public";
 await rm(RA, { recursive: true, force: true });
 await mkdir(`${RA}/anh`, { recursive: true });
 
-// ---- Ảnh thật của BNI HD (thư mục anh-goc/): nén lại cho nhẹ, ảnh nền đầu trang lưu thành nen.jpg ----
-const doiDuoi = (ten) => ten.replace(/\.\w+$/, ".jpg");
-for (const [ten, dich] of [...CH.album.map(([f]) => [f, doiDuoi(f)]), [CH.anhNen, "nen.jpg"]]) {
-  await sharp(`anh-goc/${ten}`).resize({ width: 1280 }).jpeg({ quality: 78, mozjpeg: true }).toFile(`${RA}/anh/${dich}`);
-}
+// ---- Ảnh thật của BNI HD (thư mục anh-goc/) ----
+// Ảnh album giữ nguyên file gốc, không thu nhỏ hay nén lại (người vận hành yêu cầu giữ đúng chất lượng).
+// Riêng ảnh nền đầu trang nằm dưới lớp phủ đỏ nên thu về 1280 điểm ảnh cho trang mở nhanh.
+for (const [ten] of CH.album) await copyFile(`anh-goc/${ten}`, `${RA}/anh/${ten}`);
+await sharp(`anh-goc/${CH.anhNen}`).resize({ width: 1280 }).jpeg({ quality: 78, mozjpeg: true }).toFile(`${RA}/anh/nen.jpg`);
 
 // ---- Nhạc nền (thư mục nhac/), phát khi khách bấm "Mở thư mời" ----
 if (CH.nhacNen) {
@@ -104,7 +104,7 @@ const chuongTrinh = CH.chuongTrinh.length
     CH.chuongTrinh.map(([tu, den, ds]) => `<div class="muc r"><div class="gio">${tu}<small>đến ${den}</small></div><ul>${ds.map((x) => `<li>${thoat(x)}</li>`).join("")}</ul></div>`).join("") +
     `</div>\n  </section>\n`
   : "";
-const album = CH.album.map(([f, alt]) => `<figure><img src="anh/${doiDuoi(f)}" alt="${thoat(alt)}" loading="lazy"></figure>`).join("\n      ");
+const album = CH.album.map(([f, alt]) => `<figure><img src="anh/${f}" alt="${thoat(alt)}" loading="lazy"></figure>`).join("\n      ");
 const dauTick = `<i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg></i>`;
 const luuY = CH.luuY.length
   ? `      <div class="luu-y r"><p style="font-weight:700;color:var(--chu)">Lưu ý tham dự:</p><ul class="loi-ich">${CH.luuY.map((x) => `<li>${dauTick}${thoat(x)}</li>`).join("")}</ul></div>\n`
